@@ -1,0 +1,136 @@
+@font-face {
+        font-family: 'Nunito Sans';
+        src: url('fonts/NunitoSans.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+body {
+  height: 100%;
+  background-color: #000f37;
+  color: #dddddd;
+  font-family: "Nunito Sans";
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #000a1e;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin-left: 150px;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  font-size: 10px;
+  padding: 10px;
+  color: #ccc;
+  background-color: #000a1e;
+}
+
+a{
+  color: #3486d3;
+}
+
+.fish_top{
+  margin-right: 10px;
+  margin-left: -20px;
+/*  margin-bottom: 0px;  */
+}
+
+.gallery-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 20px;
+}
+
+.gallery-arrow {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+}
+
+.gallery-img {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.gallery-images {
+  display: flex;
+  gap: 15px;
+}
+
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gallery-label {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: #e7e7e7;
+  text-align: center;
+}
+
+.aboutme {
+  display: flex;
+  margin: 30px 0;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutmeItem {
+  display: flex;
+  width: 250px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  background-color: #003c74;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+button {
+  background-color: #0046b0;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}

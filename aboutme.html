@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <title>About me - Feesh Inc.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/feeshDANGER.png">
+  <script src="scripts.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <img src="assets/feesh.png" alt="Feesh" height="35px" width="35px" class="fish_top">
+      <font size="5"><a href="index.html">Feesh Inc.</a></font>
+    </nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="aboutme.html">About me</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Hi!</h1>
+    <p>I'm SpaceVis, 14 years old, and I've created this website all from scratch.</p>
+    <div class="aboutme">
+      <div class="aboutmeItem">
+        I love gaming. I mostly play games like Undertale and Deltarune, which have a great story but are pretty linear, but me and my friends also play Star Wars - Battlefront 2. I also enjoy playing other indie titles like Cuphead.
+      </div> 
+      <div class="aboutmeItem">
+        Programming is also a favorite of mine. I've mastered Python and Scratch, and am currently learning C++. You can find a few of my projects in the "projects" section!
+      </div>
+      <div class="aboutmeItem">
+        Outside of the online world, I spend most of my time reading. I especially love dystopian books. Think of The Hunger Games, Scythe (great trilogy - go read it!) and so on. I also like the books of Stephen Fry, with his retellings of the Greek myths.
+      </div>
+    </div>
+  </main>
+  <!-- GALLERY MADE USING AI TOOLS. -->
+  <div class="gallery-container">
+    <button class="gallery-arrow" id="gallery-prev">&#8592;</button>
+    <div class="gallery-images">
+      <div class="gallery-item">
+        <img class="gallery-img" id="gallery-img-0" src="img1.jpg" alt="Gallery Image 1">
+        <div class="gallery-label" id="gallery-label-0">Label 1 (something went wrong)</div>
+      </div>
+      <div class="gallery-item">
+        <img class="gallery-img" id="gallery-img-1" src="img2.jpg" alt="Gallery Image 2">
+        <div class="gallery-label" id="gallery-label-1">Label 2 (something went wrong)</div>
+      </div>
+      <div class="gallery-item">
+        <img class="gallery-img" id="gallery-img-2" src="img3.jpg" alt="Gallery Image 3">
+        <div class="gallery-label" id="gallery-label-2">Label 3 (something went wrong)</div>
+      </div>
+    </div>
+    <button class="gallery-arrow" id="gallery-next">&#8594;</button>
+  </div>
+  <script>
+    // SCRIPT MADE USING AI TOOLS.
+    const images = [
+      { src: "assets/undertale.png", label: "Undertale (debug mode)" },
+      { src: "assets/deltarune.png", label: "Deltarune (the original Star ‭ ‭ ‭ ‭walker)" },
+      { src: "assets/cuphead.png", label: "Cuphead (so close, yet so far)" },
+      { src: "assets/Win95.png", label: "Keygen (windows 95, python)" }
+    ];
+    let current = 0;
+    function updateGallery() {
+      for (let i = 0; i < 3; i++) {
+        const imgElem = document.getElementById('gallery-img-' + i);
+        const labelElem = document.getElementById('gallery-label-' + i);
+        const imgIndex = (current + i) % images.length;
+        imgElem.src = images[imgIndex].src;
+        imgElem.alt = "Gallery Image " + (imgIndex + 1);
+        labelElem.textContent = images[imgIndex].label;
+      }
+    }
+    document.getElementById('gallery-prev').onclick = () => {
+      current = (current - 1 + images.length) % images.length;
+      updateGallery();
+    };
+    document.getElementById('gallery-next').onclick = () => {
+      current = (current + 1) % images.length;
+      updateGallery();
+    };
+    updateGallery();
+  </script>
+  <!-- END OF AI GENERATED CODE. -->
+  <footer>
+    Design created using Figma. Copyleft 2025 SpaceVis. <a href="tos.html">Terms Of Service</a>
+  </footer>
+</body>
+</html>
