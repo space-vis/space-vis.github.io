@@ -105,6 +105,7 @@ a{
 .aboutme {
   display: flex;
   margin: 30px 0;
+  margin-right: 10%;
   gap: 20px;
   align-items: center;
   justify-content: center;
