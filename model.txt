@@ -1,0 +1,58 @@
+' Comment dit voor meerdere runs
+if T > 0 then
+  stop
+endif
+
+Fterug := Fz * sin(hoek) ' volgt uit constructie
+Fres := Fterug - Fwr                ' resulterende kracht
+a := Fres / m                  ' 2e wet van Newton
+v := v + a * dt                ' baansnelheid neemt toe (start: negatief!)
+ds := v * dt                     ' in dt afgelegde afstand (over cirkelbaan)
+vorighoek = hoek
+hoek := hoek + ds * f    'van afstand (over cirkelbaan) naar hoek (in graden)
+
+Fwr := 0.5 * rho * opp * cw * (v*v)    'formule voor luchtwrijving
+Fwr := sign(v) * Fwr                   'het teken (plus/min) overnemen (met functie sign()); richting van wrijvingskracht!!
+
+t := t + dt                      ' tijd bijhouden
+
+if hoek > vorighoek then
+  halfper = 1
+endif
+
+if hoek < vorighoek then
+  if halfper = 1 then
+    T = t / run
+    run = run + 1
+    halfper = 0
+  endif
+endif
+
+
+
+============================
+
+
+
+' Eigenschappen van je slinger.
+L := 0.75               ' lengte van de slinger (m)
+m := 0.050            ' massa van de slinger (kg)
+hoek := 10             ' starthoek van de slinger (graden, NIET radialen!)
+g := -9.81              ' valversnelling (m/s2) 
+
+' Vaste factoren
+Fz := m * g                ' zwaartekracht op massa (N)
+f := 360 / (2 * 3.14159265 * L)    ' omrekenfactor niet in modelregels; sneller!
+
+' Instellingen van het model:
+dt := 0.001              ' tijdsinterval (s)
+' Tools > Activity options > Advanced > Degrees !!
+' Tools > Settings > Number of cycles: 1000
+
+
+' Baksteen
+rho = 1.293
+opp = TODO
+cw = OPZOEKEN
+
+run = 1
